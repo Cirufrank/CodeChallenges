@@ -16,17 +16,18 @@ is_prime(2)  => true
 is_prime(-1) => false 
 
 */
+
 function isPrime(num) {
-    if (num > Math.pow(2,31)) {
-      return "Number too High";
+    if (num >= Math.pow(2,31)) {
+      return false;
     } else if (num === 0 || num === 1 || num < 0) {
       return false
     }
     
     let divisors = 0;
     
-    for (let i = num; i > 1; i-=1) {
-      if (i === 1 || i === num) {
+    for (let i = Math.ceil(Math.sqrt(num)); i >= 2; i-=1) {
+      if (i === 1 || i === num || num % i !== 0) {
         continue;
       } else if (num % i === 0) {
         divisors +=1
@@ -35,6 +36,9 @@ function isPrime(num) {
     
     return divisors > 0 ? false : true;
   }
+  
+  
+
 
   /*
 
