@@ -1,3 +1,6 @@
+const calculatorBody = document.querySelector()
+
+
 function makeCalculator(fontSize, textColor, mainColor) {
     this.fontSize = fontSize;
     this.textColor = textColor;
@@ -13,5 +16,8 @@ function makeCalculator(fontSize, textColor, mainColor) {
     this.displayResult = function() {
         /* Display result */
         console.log("Display Result")
+    }
+    this.setFontColor = function() {
+
     }
 }
