@@ -14,8 +14,9 @@ For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should r
 */
 
 function countPositivesSumNegatives(input) {
-    return [input.filter(num => Number(num) > 0).length, 
-                                                        input.filter(num => Number(num) < 0).reduce(((acc, c) => Number(acc) + Number(c)),0)];
+  
+    return (input && input.length > 0) ? [input.filter(num => Number(num) > 0).length, 
+                                                        input.filter(num => Number(num) < 0).reduce(((acc, c) => Number(acc) + Number(c)),0)] : [];
 }
 
 /*
