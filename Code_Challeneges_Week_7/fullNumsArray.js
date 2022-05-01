@@ -18,6 +18,7 @@ Input: 1,3,5,6,7,8 Output: 1,2,3,4,5,6,7,8
 */
 
 function pipeFix(numbers){
+    if (numbers.length === 1) return numbers;
     let endOfNums = numbers.pop();
     let beginningOfNums = numbers.shift();
     let numArray = [];
