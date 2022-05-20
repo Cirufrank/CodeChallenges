@@ -28,11 +28,12 @@ function squareIt(int) {
     let digitString = String(int);
     let sqrt = Math.sqrt(digitString.length);
     if (sqrt % 1 !== 0) return 'Not a perfect square!'
-    else if (sqrt === 1) return `1`;
-      let digitArray = digitString.split("");
+    else if (digitString.length === 1) return `${digitString}`
+  
+    let digitArray = digitString.split("");
     
     for (let i = sqrt; i <= digitString.length; i += sqrt + 1) {
-      digitArray.splice(i ,0,'\n');
+      if (i !== digitString.length - 1) digitArray.splice(i ,0,'\n');
     }
     
     return digitArray.join("")
