@@ -53,6 +53,12 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
  * @return {number}
  */
 
+//Slighly Optimized
+/**
+ * @param {string} s
+ * @return {number}
+ */
+
 
  let intToRoman = new Map();
  intToRoman.set("I", 1);
@@ -69,7 +75,43 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
  intToRoman.set("CD", 400);
  intToRoman.set("CM", 900);
  
- let twoNumeralValues = ["IV", "IX", "XL", "XC", "CD", "CM"]
+ function romanToInt(s) {
+     let integerConversion = 0;
+     let indicesOfTwoNumerals = [];
+     for (let i = 0; i < s.length - 1; i += 1) {
+         let twoNumerals = s[i] + s[i + 1];
+         if ( intToRoman.has(twoNumerals)) {
+             integerConversion += intToRoman.get(twoNumerals);
+             if ( !indicesOfTwoNumerals.includes(i)) indicesOfTwoNumerals.push(i); 
+             if ( !indicesOfTwoNumerals.includes(i + 1)) indicesOfTwoNumerals.push(i + 1); 
+         }
+     }
+ 
+ s.split("").forEach((numeral, index) => {
+     if (!indicesOfTwoNumerals.includes(index)) integerConversion += intToRoman.get(numeral);
+ });
+     
+     return integerConversion;
+ 
+ 
+ } 
+
+
+//First Attempt
+ let intToRoman = new Map();
+ intToRoman.set("I", 1);
+ intToRoman.set("V", 5);
+ intToRoman.set("X", 10);
+ intToRoman.set("L", 50);
+ intToRoman.set("C", 100);
+ intToRoman.set("D", 500);
+ intToRoman.set("M", 1000);
+ intToRoman.set("IV", 4);
+ intToRoman.set("IX", 9);
+ intToRoman.set("XL", 40);
+ intToRoman.set("XC", 90);
+ intToRoman.set("CD", 400);
+ intToRoman.set("CM", 900);
  
  function romanToInt(s) {
      let stringArray = s.split("");
@@ -92,4 +134,6 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
  
  
  }
+
+
  
