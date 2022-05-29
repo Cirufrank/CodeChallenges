@@ -1,8 +1,8 @@
 # Code Challenges
 
-Every day I like to complete at least one code challenge. To me, code challenges are like playing chess, and force me to be strategic and efficinet in the way that I go about solving my problems. In additional to this, as a life-long learner I love to learn new ways to imporve and optimize the way I solve problems though code, and solving coding challenges helps be stay sharp, improve my speed, and learn new ways to optimze the functions I write.
-
 ![](https://media.giphy.com/media/hqRJOdxsBuGGKCGuGO/giphy.gif)
+
+Every day I like to complete at least one code challenge. To me, code challenges are like playing chess, and force me to be strategic and efficinet in the way that I go about solving my problems. In additional to this, as a life-long learner I love to learn new ways to imporve and optimize the way I solve problems though code, and solving coding challenges helps be stay sharp, improve my speed, and learn new ways to optimze the functions I write.
 
 ## Methodology
 
