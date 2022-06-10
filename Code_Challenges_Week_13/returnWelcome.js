@@ -21,6 +21,12 @@ function sayHello( name, city, state ) {
     return `Hello, ${nameString}! Welcome to ${city}, ${state}!`
   }
 
+  //Refactor:
+
+  function sayHello( name, city, state ) {
+    return `Hello, ${name.join(' ')}! Welcome to ${city}, ${state}!`;
+  }
+
   /*
   
   Tests:
