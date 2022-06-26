@@ -84,3 +84,20 @@ pos is -1 or a valid index in the linked-list.
     
     return false
 };
+
+/*
+
+Option 3 O(n) time and O(1) space*/
+
+var hasCycle = function(head) {
+    let fast = head;
+    let slow = head;
+    
+    while(fast && fast.next) {
+        fast = fast.next.next;
+        slow = slow.next;
+        if (fast === slow) return true
+    }
+    
+    return false
+};
