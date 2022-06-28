@@ -104,3 +104,21 @@ describe("tests for appending one linked list to another.", function() {
 });
 
 */
+
+/*
+
+
+reverseList([1,2,3,4,5])
+  let reversedList = reverseList([2,3,4,5])
+    let nextNode = [2,3,4,5];
+    nextNode.next = [2,3,4,5];
+    head.next = null;
+    return reversedList;
+  let nextNode = [1,2,3,4,5];
+  nextNode.next = [1,2,3,4,5];
+  head.next = null;
+  return reversedList;
+    
+    
+    
+    */
