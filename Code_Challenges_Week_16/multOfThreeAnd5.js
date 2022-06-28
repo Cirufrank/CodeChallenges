@@ -20,12 +20,14 @@ function solution(number){
     let multOfFive = 5;
     
     while(multOfThree < number || multOfFive < number) {
+    // if a multiple of three is also a multiple of five, then this multiple of three is not counted
       if (multOfThree % 5 !== 0) count += multOfThree;
-      
+      // since while a multiple of three is less than the number, a multiple of five may be greater than a number, we test to make sure that the multiple of 5 being added to the count is always less than the number
+      //Also, if a multiple of five is also a multiple of three then it will be counted (only once);
       if (multOfFive < number) {
         count += multOfFive
       }
-      
+      //we add 3 and 5 to their appropriate multiples
       multOfThree += 3;
       multOfFive +=5;
       
