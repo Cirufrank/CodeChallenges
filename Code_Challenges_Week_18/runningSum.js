@@ -56,9 +56,9 @@ const runningSum = function(nums) {
  
  Results:
  
- Success
+Success
 Details 
-Runtime: 105 ms, faster than 26.22% of JavaScript online submissions for Running Sum of 1d Array.
-Memory Usage: 48.4 MB, less than 5.01% of JavaScript online submissions for Running Sum of 1d Array.
+Runtime: 77 ms, faster than 73.15% of JavaScript online submissions for Running Sum of 1d Array.
+Memory Usage: 47.8 MB, less than 5.01% of JavaScript online submissions for Running Sum of 1d Array.
 
 */
