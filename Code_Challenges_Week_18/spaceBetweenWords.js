@@ -13,6 +13,7 @@ Example
 
 // complete the function
 function solution(string) {
+    if (string.trim() === "") return string;
     let stringArray = [...string];
     
     stringArray.forEach((char, index) => {
