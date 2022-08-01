@@ -35,9 +35,7 @@ Array.prototype.square = function() {
   }
   
   Array.prototype.average = function() {
-    const totalNums = this.length
-    const sumOfNums = this.reduce(((acc, curNum) => acc + curNum), 0);
-    return sumOfNums / totalNums;
+    return this.sum() / this.length
   }
   
   Array.prototype.sum = function() {
