@@ -35,9 +35,11 @@ Example
 
 class Quark{
     constructor(color, flavor) {
+      this.valid_colors = ["red", "blue", "green"];
+      this.valid_flavors = ['up', 'down', 'strange', 'charm', 'top', 'bottom'];
       this.baryon_number = 1/3;
-      this.color = color;
-      this.flavor = flavor;
+      this.color = this.valid_colors.includes(color) ? color : 'invalid color chosen';
+      this.flavor = this.valid_flavors.includes(flavor) ? flavor : 'invalid flavor chosen';
     }
     interact(quark2) {
      [this.color, quark2.color] = [quark2.color, this.color]
