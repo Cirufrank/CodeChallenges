@@ -44,6 +44,27 @@ function countPhotos(road){
   
   }
 
+  //Variation
+  function countPhotos(road){
+    const rightCar = '>';
+    const leftCar = '<';
+    const camera = '.';
+    const arrOfCarsAndCams = road.split("");
+    
+    let totalPictures = 0;
+    
+    arrOfCarsAndCams.forEach((currentCamera, index) => {
+      if (currentCamera === camera) {
+        const picsOfCarsToLeft = arrOfCarsAndCams.slice(0, index).filter(car => car === rightCar).length
+        const picsOfCarsToRight = arrOfCarsAndCams.slice(index + 1).filter(car => car === leftCar).length;
+        const picsTaken = picsOfCarsToLeft + picsOfCarsToRight;
+        totalPictures += picsTaken; 
+      }
+    });
+    return totalPictures;
+  
+  }
+
 /*
 
 Tests:
