@@ -36,7 +36,7 @@ I have created other katas. Have a look if you like coding and challenges.
 
 function foldArray(array, runs)
 {
-  if (array.length === 1 || !runs) return array;
+  if (array.length === 1) return array;
   let arrayToFold = array.slice();
   let foldedArray = [];
   
