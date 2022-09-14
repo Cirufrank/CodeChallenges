@@ -37,61 +37,21 @@ I have created other katas. Have a look if you like coding and challenges.
 function foldArray(array, runs)
 {
   if (array.length === 1) return array;
-  const firstRun = runs;
+  let arrayToFold = array.slice();
   let foldedArray = [];
-  let pointer1 = 0;
-  let pointer2 = array.length - 1;
   
-  while (runs > 0) {
-    if (array.length === 1) return array;
-    if (foldedArray.length === 1) return foldedArray;
-    if (foldedArray.length === 2) return [foldedArray.reduce((sum, curVal) => sum + curVal, 0)];
-    let curElement;
-    let curElement2;
-    if (firstRun === runs) { 
-      if (array.length % 2 === 0) {
-        while(foldedArray.length < array.length / 2) {
-          [curElement, curElement2] = [array[pointer1], array[pointer2]]
-          foldedArray.push(curElement + curElement2);
-          pointer1 += 1;
-          pointer2 -= 1;
-        }
-        
-      } else {
-        const middleElement = array[Math.floor(array.length / 2)];
-        while (pointer1 !== pointer2) {
-          [curElement, curElement2] = [array[pointer1], array[pointer2]]
-          foldedArray.push(curElement + curElement2);
-          pointer1 += 1;
-          pointer2 -= 1;
-        }
-        foldedArray.push(middleElement);
-      }
-    } else {
-      const resultArray = [];
-      if (foldedArray.length % 2 === 0) {
-        while(resultArray.length < foldedArray.length / 2) {
-          [curElement, curElement2] = [foldedArray[pointer1], foldedArray[pointer2]];
-          resultArray.push(curElement + curElement2);
-          pointer1 += 1;
-          pointer2 -= 1;
-        }
-      } else {
-        const middleElement = foldedArray[Math.floor(foldedArray.length / 2)];
-        while (pointer1 !== pointer2) {
-          [curElement, curElement2] = [foldedArray[pointer1], foldedArray[pointer2]];
-          resultArray.push(curElement + curElement2);
-          pointer1 += 1;
-          pointer2 -= 1;
-        }
-        resultArray.push(middleElement);
-      }
-      foldedArray = resultArray;
+  while(runs > 0 && arrayToFold.length > 1) {
+    while(arrayToFold.length > 1) {
+      const firstElement = arrayToFold.shift();
+      const lastElement = arrayToFold.pop();
+      foldedArray.push(firstElement + lastElement);
     }
-    [pointer1, pointer2] = [0, foldedArray.length - 1];
-    runs -= 1;
+    arrayToFold = [...foldedArray, ...arrayToFold];
+    foldedArray = [];
+    runs -= 1; 
   }
-  return foldedArray;
+  return arrayToFold;
+
 }
 
 /*
