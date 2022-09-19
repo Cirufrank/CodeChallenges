@@ -35,7 +35,7 @@ function highestRank(arr){
     return highestNumsOfOccurences[0][0];
   }
 
-  //Clever solution optomized for space and time
+  //Clever solution optomized for space O(1) and time O(N^2)
 
   function highestRank(arr){
     return arr.reduce((mostFreq, curNum) => {
