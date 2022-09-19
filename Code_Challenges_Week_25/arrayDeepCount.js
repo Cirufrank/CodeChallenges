@@ -46,6 +46,41 @@ function deepCount(array, totalElements){
      return count;
    }
 
+   //Updated Recursion solution
+
+   function deepCount(array) {
+    let count = 0;
+    
+    count += array.length;
+    const nestedArrays = array.filter(element => Array.isArray(element));
+    
+    if (nestedArrays.length > 0) {
+        for (const element of nestedArrays) {
+          count += deepCount(element);
+      }
+    }
+    
+    return count;
+    
+  }
+
+  //Updated Stack Example
+
+  function deepCount(array) {
+    let count = 0;
+    
+    const stack = [...array];
+    let currentElement = stack.pop();
+    while(currentElement) {
+      count += 1;
+      if (Array.isArray(currentElement)) {
+        stack.push(...currentElement);
+      }
+      currentElement = stack.pop();
+    }
+    return count;
+  }
+
 /*
 
 Tests:
