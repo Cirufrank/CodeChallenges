@@ -35,6 +35,17 @@ function highestRank(arr){
     return highestNumsOfOccurences[0][0];
   }
 
+  //Clever solution optomized for space and time
+
+  function highestRank(arr){
+    return arr.reduce((mostFreq, curNum) => {
+      const curNumFrequency = arr.filter(num => num === curNum).length;
+      const curMostFreqFrequency = arr.filter(num => num === mostFreq).length;
+      if (mostFreq === curNum) return (curNumFrequency >= curMostFreqFrequency) ? curNum : mostFreq;
+      else if (curNumFrequency === curMostFreqFrequency) return (curNum >= mostFreq) ? curNum : mostFreq;
+      else return (curNumFrequency >= curMostFreqFrequency) ? curNum : mostFreq;
+    }, arr[0])
+  }
 /*
 
 Tests:
