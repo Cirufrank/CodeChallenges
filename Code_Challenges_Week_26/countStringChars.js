@@ -8,6 +8,8 @@ What if the string is empty? Then the result should be empty object literal, {}.
 
 */
 
+
+//O(n) time complexity approach where n is the length of the string
 function count (string) {  
     if (string === "") return {};
     const charsAndOccurences = {};
@@ -23,7 +25,22 @@ function count (string) {
     return charsAndOccurences;
   }
 
+  //O(n^2) time complexity approach where the first n is the number of unique characters in a string, and the second n is the total number of characters in the string (since an anonymous function will be called on each characrter within a string when using the filter method)
+
+  function count (string) {  
+    if (string === "") return {};
+    const charsAndOccurences = {};
+    const charsArray = string.split("");
+    const uniqueChars = new Set(charsArray);
+    uniqueChars.forEach(char => {
+      charsAndOccurences[char] = charsArray.filter(currentChar => currentChar === char).length;
+    })
+    return charsAndOccurences;
+  }
+  
 /*
+
+
 
 Tests:
 
