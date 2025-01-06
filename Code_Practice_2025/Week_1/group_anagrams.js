@@ -25,3 +25,13 @@ const groupAnagrams = function(strs) {
 
 // Time complexity: O(n logn)
 // Space complexity: O(n)
+
+// Runtime
+// 37ms
+// Beats
+// 57.94%
+// Analyze Complexity
+// Memory
+// 61.50MB
+// Beats
+// 95.38%
