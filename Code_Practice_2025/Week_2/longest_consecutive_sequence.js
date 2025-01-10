@@ -8,14 +8,16 @@
  */
 const longestConsecutive = function(nums) {
     if (nums.length === 0 || nums.length === 1) return nums.length
-    nums = Array.from(new Set(nums.sort((a, b) => a - b)))
-    prevNum = nums.shift()
+    nums = nums.sort((a, b) => a - b)
+    let prevNum = nums.shift();
     let curConsecSeq = [prevNum];
     let maxSeq = 1
 
     for (const num of nums) {
         if (prevNum + 1 === num) {
            curConsecSeq.push(num)
+        } else if (prevNum === num) {
+            continue;
         } else {
             curConsecSeq = [num]
         }
@@ -30,3 +32,10 @@ const longestConsecutive = function(nums) {
 
 // Time compelixty: O(n log n)
 // Space compelexity: O(1)
+
+// Runtime 38ms
+// Beats 66.86%
+// Analyze Complexity
+// Memory 65.66MB
+// Beats
+// 88.08%
