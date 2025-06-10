@@ -15,5 +15,5 @@ const containsDuplicate = function(nums) {
 };
 
 // Time complexity: O(n)
-// Space compleixty: O(1)
+// Space complxity: O(n)
 
